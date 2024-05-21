@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        directionVector = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0).normalized;
+        directionVector = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0);
         transform.position += directionVector * Time.deltaTime * speed;
     }
 
