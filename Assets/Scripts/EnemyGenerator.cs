@@ -29,7 +29,7 @@ public class EnemyGenerator : MonoBehaviour
             }
             while(vectorToPlayer.magnitude < 1);
 
-            Instantiate<GameObject>(enemy, randomPos, Quaternion.Euler(0,0,Mathf.Atan2(vectorToPlayer.y, vectorToPlayer.x) * Mathf.Rad2Deg - 90));
+            Instantiate<GameObject>(enemy, randomPos, Quaternion.Euler(0,0,Mathf.Atan2(-vectorToPlayer.x,vectorToPlayer.y) * Mathf.Rad2Deg));
             timer = 0;
         }
     
