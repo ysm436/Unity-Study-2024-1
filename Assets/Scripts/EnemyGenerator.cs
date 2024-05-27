@@ -16,6 +16,10 @@ public class EnemyGenerator : MonoBehaviour
     Vector3 vectorToPlayer;
     float timer = 0;
 
+    private void Awake()
+    {
+        player.GetComponent<Player>().OnGameover += EnemyGenGameover;
+    }
     private void Update()
     {
         timer += Time.deltaTime;
@@ -33,5 +37,10 @@ public class EnemyGenerator : MonoBehaviour
             timer = 0;
         }
     
+    }
+
+    void EnemyGenGameover()
+    {
+        gameObject.SetActive(false);
     }
 }
