@@ -1,6 +1,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyGenerator : MonoBehaviour
@@ -20,18 +21,23 @@ public class EnemyGenerator : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > SpawnCycle){
+        if (timer > SpawnCycle)
+        {
 
             do
             {
-            randomPos = new Vector3(Random.Range(minSpawnPos.x,maxSpawnPos.x), Random.Range(minSpawnPos.y,maxSpawnPos.y), 0);
-            vectorToPlayer = player.transform.position - randomPos;
+                randomPos = new Vector3(Random.Range(minSpawnPos.x, maxSpawnPos.x), Random.Range(minSpawnPos.y, maxSpawnPos.y), 0);
+                vectorToPlayer = player.transform.position - randomPos;
             }
-            while(vectorToPlayer.magnitude < 1);
+            while (vectorToPlayer.magnitude < 1);
 
-            Instantiate<GameObject>(enemy, randomPos, Quaternion.Euler(0,0,Mathf.Atan2(-vectorToPlayer.x,vectorToPlayer.y) * Mathf.Rad2Deg));
+            Instantiate<GameObject>(enemy, randomPos, Quaternion.Euler(0, 0, Mathf.Atan2(-vectorToPlayer.x, vectorToPlayer.y) * Mathf.Rad2Deg));
             timer = 0;
         }
-    
+
+    }
+    public void OnGameOver()
+    {
+        gameObject.SetActive(false);
     }
 }
