@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Example Project.sln"
+    "dotnet.defaultSolution": "Unity-Study-2024-1.sln"
 }
