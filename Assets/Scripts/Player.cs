@@ -9,6 +9,9 @@ using UnityEngine.EventSystems;
 public class Player : MonoBehaviour
 {
     public int speed;
+    public int max_hp = 3;
+    public int hp = 3;
+
     Vector3 directionVector;
 
     public Action OnGameover;
@@ -27,9 +30,16 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
-        {
-            OnGameover();
-        }
+            hp -= 1;
+            if (hp <= 0)
+                OnGameover();            
+            
+
+        if (other.gameObject.tag == "Item")
+            if (hp < max_hp)
+                hp += 1;
+
+        Destroy(other.gameObject);
     }
 
     void PlayerGameover()
