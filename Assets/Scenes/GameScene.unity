@@ -154,9 +154,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2077950326}
   enemy: {fileID: 2514821793435367187, guid: a3294d565b0f3594f8de51949ce9ddd7, type: 3}
-  SpawnCycle: 0.5
-  minSpawnPos: {x: -9, y: -5}
-  maxSpawnPos: {x: 9, y: 5}
+  SpawnCycle: 0.3
+  minSpawnPos: {x: -7, y: -4}
+  maxSpawnPos: {x: 7, y: 4}
 --- !u!4 &4926532
 Transform:
   m_ObjectHideFlags: 0
@@ -861,6 +861,7 @@ GameObject:
   - component: {fileID: 2077950329}
   - component: {fileID: 2077950331}
   - component: {fileID: 2077950330}
+  - component: {fileID: 2077950332}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -883,6 +884,7 @@ MonoBehaviour:
   speed: 7
   max_hp: 3
   hp: 3
+  animatior: {fileID: 2077950332}
 --- !u!4 &2077950328
 Transform:
   m_ObjectHideFlags: 0
@@ -1022,6 +1024,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!95 &2077950332
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077950326}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61e2033cb8accd845bacf0838d5e039f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8028131228689216110}
   - component: {fileID: 7078213952981357741}
   - component: {fileID: 3934245330376615981}
+  - component: {fileID: -173968755636537320}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -99,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  animator: {fileID: -173968755636537320}
   minAlivePos: {x: -9, y: -5}
   maxAlivePos: {x: 9, y: 5}
 --- !u!60 &3934245330376615981
@@ -149,3 +151,24 @@ PolygonCollider2D:
       - {x: -0.25, y: -0.14433333}
       - {x: 0.25, y: -0.14433333}
   m_UseDelaunayMesh: 0
+--- !u!95 &-173968755636537320
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2514821793435367187}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 94b9082fb6b5783478d2611f173d8370, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
