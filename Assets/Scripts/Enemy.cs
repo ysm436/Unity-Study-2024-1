@@ -20,4 +20,12 @@ public class Enemy : MonoBehaviour
 
         
     }
+    void OnTriggerEnter2D(Collider2D x)
+    {//적이 무언가와 충돌했을 때
+        if(x.gameObject.CompareTag("Player"))
+        {//플레이어와 충돌했을 경우, 플레이어에게 피해를 입히고 적은 사라진다.
+            x.gameObject.GetComponent<Player>().Damage();
+            Destroy(gameObject);
+        }
+    }
 }
