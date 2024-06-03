@@ -1,5 +1,3 @@
-
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +8,11 @@ public class Player : MonoBehaviour
     public int speed;
     int life = 3;
     Vector3 directionVector;
+    Animator anim;
+    void Start()
+    {
+        this.anim = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -18,6 +21,7 @@ public class Player : MonoBehaviour
     }
     public void Damage()
     {//플레이어가 적에게 닿았을 때
+        this.anim.SetTrigger("Ouch");//피격 트리거
         this.life -= 1;//생명 1개 감소
         GameObject x = GameObject.Find("EnemyGenerator");
         x.GetComponent<EnemyGenerator>().LifeUI(this.life);//줄어든 생명을 UI에 반영한다.
